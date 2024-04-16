@@ -11,8 +11,11 @@
   </head>
 
   <body>
+    <% if flash.any? %>
+    <div class="container-sm" style="max-width: 500px;">
+      <%= render "shared/flashes" %>
+    </div>
+    <% end %>
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
 </html>

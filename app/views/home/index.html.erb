@@ -6,7 +6,7 @@
     <div class="col">
       <ul class="list-group">
         <%= Tweet.find_each do |tweet| %>
-          <li class="list-group-item"><%= tweet.user.email %> <%= tweet.body %></li>
+          <li class="list-group-item"><%= tweet.user.username %> <%= tweet.body %></li>
         <% end %>
       </ul>
     </div>
