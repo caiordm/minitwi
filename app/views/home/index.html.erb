@@ -1,12 +1,12 @@
 <div class="container text-start mt-5">
   <div class="row">
     <div class="col gap-3">
-      <h1>Bem vindos ao Twitter!</h1>
+      <h1>Welcome to The Mini Twitter!</h1>
     </div>
     <div class="col">
       <ul class="list-group">
         <%= Tweet.find_each do |tweet| %>
-          <li class="list-group-item"><%= tweet.user.username %> <%= tweet.body %></li>
+          <li class="list-group-item d-flex align-items-center justify-content-between"><span>@<%= tweet.user.username %> | <%= tweet.body %></span> <span style="font-size: 12px; color: #3065ac; font-weight: bold;"><%= tweet.updated_at.strftime("%Y-%m-%d %H:%M") %></span></li>
         <% end %>
       </ul>
     </div>
