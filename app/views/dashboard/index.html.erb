@@ -7,7 +7,7 @@
       </div>
       <%= form_with model: Tweet.new, url: tweets_path, class: "mt-3", method: :post, local: true do |f| %>
         <%= f.text_field :body, class: "form-control form-control-lg fs-6 mb-3", placeholder: "Type something!!" %>
-        <%= f.submit "Tweet", class: "btn btn-primary" %>
+        <%= f.submit "Post", class: "btn btn-primary" %>
       <% end %>
       </div>
     <div class="col">
