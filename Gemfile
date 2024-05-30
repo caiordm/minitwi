@@ -5,6 +5,8 @@ ruby "3.3.0"
 # Use specific branch of Rails
 gem "rails", github: "rails/rails", branch: "7-1-stable"
 
+gem 'will_paginate', '~> 4.0'
+
 gem "devise"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"

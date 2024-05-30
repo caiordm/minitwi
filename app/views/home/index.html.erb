@@ -6,14 +6,28 @@
     </div>
     <div class="col">
       <ul class="list-group">
-        <%= Tweet.find_each do |tweet| %>
-          <li class="list-group-item d-flex align-items-center justify-content-between"><span>@<%= tweet.user.username %> | <%= tweet.body %></span> <span style="font-size: 12px; color: #3065ac; font-weight: bold;"><%= tweet.updated_at.strftime("%Y-%m-%d %H:%M") %></span></li>
+
+        <% @tweets.each do |tweet| %>
+          <li class="list-group-item d-flex align-items-center justify-content-between">
+            <span>@<%= tweet.user.username %> | <%= tweet.body %></span> 
+            <span style="font-size: 12px; color: #3065ac; font-weight: bold;">
+              <%= tweet.updated_at.strftime("%Y-%m-%d %H:%M") %> 
+            </span>
+          </li>
         <% end %>
+        
+        
+        <div class="digg_pagination">
+          <div class="page_info">
+            <%= page_entries_info @tweets %>
+          </div>
+          <%= will_paginate @tweets, :page_links => false %>
+        </div>
       </ul>
     </div>
     <div class="col">
-      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
-      <%= link_to "Sign In", new_user_session_path, class: "btn btn-outline-primary" %>    
+      <%= link_to "Sign Up" , new_user_registration_path, class: "btn btn-primary" %>
+        <%= link_to "Sign In" , new_user_session_path, class: "btn btn-outline-primary" %>
     </div>
   </div>
 </div>
