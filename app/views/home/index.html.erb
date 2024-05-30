@@ -17,11 +17,11 @@
         <% end %>
         
         
-        <div class="digg_pagination">
-          <div class="page_info">
+        <div class="apple_pagination">
+          <!-- <div class="page_info">
             <%= page_entries_info @tweets %>
-          </div>
-          <%= will_paginate @tweets, :page_links => false %>
+          </div> -->
+          <%= will_paginate @tweets, :container => false %>
         </div>
       </ul>
     </div>
